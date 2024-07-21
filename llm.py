@@ -1,14 +1,13 @@
-import openai
+from openai import OpenAI
 from config import OPENAI_API_KEY
+client = OpenAI(api_key=OPENAI_API_KEY)
 
-openai.api_key = OPENAI_API_KEY
-
-def generate_chiding_message(goal):
-    response = openai.ChatCompletion.create(
+def generate_followup_message(name, description):
+    response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You are a motivational fitness coach."},
-            {"role": "user", "content": f"Generate a short, chiding message to remind someone about their exercise goal: {goal}"}
+            {"role": "system", "content": "You are a motivational fitness coach and nutrition expert."},
+            {"role": "user", "content": f"Generate a short, personalized message for {name}. Context: {description}"}
         ]
     )
     return response.choices[0].message.content

@@ -1,0 +1,18 @@
+{
+    "hugo": {
+      "telegram_username": "hugomont",
+      "telegram_id": 437378537,
+      "name": "Hugo",
+      "reminder_time": "10:00",
+      "timezone": "UTC",
+      "description": "Hugo is testing the bot's functionality."
+    },
+    "maria": {
+      "telegram_phone": "+34679499370",
+      "telegram_id": 999999999999999,
+      "name": "Maria",
+      "reminder_time": "10:00",
+      "timezone": "Europe/Madrid",
+      "description": "Maria is Hugo's mom and is using the bot for exercise reminders."
+    }
+  }
