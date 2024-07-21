@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import text
 
 Base = declarative_base()
-engine = create_engine('sqlite:///exercise_bot.db')
+engine = create_engine('sqlite:///data/bot.db')
 Session = sessionmaker(bind=engine)
 
 class User(Base):
@@ -13,7 +13,7 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     telegram_id = Column(Integer, unique=True, nullable=False)
     name = Column(String)
-    exercise_goal = Column(String)
+    goal = Column(String)
     last_response = Column(String)
     reminder_sent = Column(Boolean, default=False)
     reminder_time = Column(String)
