@@ -4,6 +4,8 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import text
 
 Base = declarative_base()
+import os
+os.makedirs('data', exist_ok=True)
 engine = create_engine('sqlite:///data/bot.db')
 Session = sessionmaker(bind=engine)
 
